@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa - MeetingDay";
+}
+
+<div class="card" style="width: 50%; left: 25%; top: 15px;">
+    <div class="m-2">
+        <h3 class="text-center  m-0"> Welcome </h3>
+        <h6 class="text-center"> Toplantı katılım durumunuzu bildiriniz.</h6>
+    </div>
+
+    
+    
+    <div class="p-3 py-1">
+        <div class="list-group text-center">
+            <li class="list-group-item"> İstanbul , Abc Kongre Merkezi </li>
+            <li class="list-group-item"> 20/02/2024 20.00.00 tarihinde gerçekleşecek </li>
+            <li class="list-group-item"> @ViewBag.Count Katılımcı </li>
+        </div>
+    </div>
+
+
+    <div class="text-center my-2">
+        
+        <a asp-controller="home" asp-action="apply" class="btn  btn-sm btn-outline-primary">Başvuru Yap</a>
+
+        
+    </div>
+</div>

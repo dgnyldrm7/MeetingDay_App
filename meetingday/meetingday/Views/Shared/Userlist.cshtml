@@ -1,0 +1,54 @@
+﻿@model List<Userinfo>
+
+@{
+    ViewData["Title"] = "Userlist - MeetingDay";
+    Layout = "~/Views/Shared/_PrimaryTop.cshtml";
+}
+
+
+
+
+
+<div class="card text-center" style="width: 50%; left: 25%; top: 15px;">
+    <div class="m-2">
+        <h3 class="text-center  m-0 p-2"> Katılımcılar Listesi </h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Adı</th>
+                            <th scope="col">Katılım Durumu</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var datas in Model)
+                        {
+                    var state = datas.WillAttend == true ? "Katılıyor" : "Katılmıyor";
+
+                        <tr>
+                        @if(datas.WillAttend == true)
+                        {
+                            <td class="bg-success text-white">@datas.Name</td>
+                            <td class="bg-success text-white">@state</td>
+                            <td> <a href="/home/Userprofile/@datas.Id" class="btn btn-sm btn-primary">Detay</a> </td>
+                        }
+                        else{
+                            <td class="bg-danger text-white">@datas.Name</td>
+                            <td class="bg-danger text-white">@state</td>              
+                            <td> <a href="/home/Userprofile/@datas.Id" class="btn btn-sm btn-primary">Detay</a> </td>
+                        }
+                        </tr>
+                        }
+
+                        
+            
+                    </tbody>
+                </table>
+        <a asp-controller="home" asp-action="Index" class="btn btn-sm btn-outline-danger">Ana Sayfa</a>
+    </div>
+
+   
+     
+</div>
+
+
